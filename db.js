@@ -18,7 +18,8 @@ const projects = {
 };
 
 
-mongoose.connect('mongodb://localhost/portfolio', { useNewUrlParser: true, useUnifiedTopology: true }).then((data)=>{
+console.log('before connecting to mongodb')
+mongoose.connect('mongodb://localhost:27017/portfolio', { useNewUrlParser: true, useUnifiedTopology: true }).then((data)=>{
   console.log('mongodb connected');
   console.log('mongodb running on mongodb://localhost/portfolio')
   console.log(data.models);

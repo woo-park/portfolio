@@ -36,7 +36,7 @@ const EmojiButton = props => {
 
     axios({
       method: 'post',
-      url: 'http://localhost:3535/portfolio/db',
+      url: 'https://wooyongpark.com/portfolio/db',
       params: addCountPost
     })
     .then(res => console.log(res.data,'retrieved')) //update the store here

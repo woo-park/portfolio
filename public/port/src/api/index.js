@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3535';
+const API_BASE_URL = 'https://wooyongpark.com';
 
 // axios.create takes in an object with baseURL and headers
 const client = axios.create({
