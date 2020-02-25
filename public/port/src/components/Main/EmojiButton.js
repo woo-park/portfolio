@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import * as api from '../../api'
 
 const EmojiButton = props => {
 
@@ -34,11 +35,14 @@ const EmojiButton = props => {
     //   console.log(success,'success');
     // })
 
-    axios({
-      method: 'post',
-      url: 'https://wooyongpark.com/portfolio/db',
-      params: addCountPost
-    })
+    // axios({
+    //   method: 'post',
+    //   url: 'https://wooyongpark.com/portfolio/db',
+    //   params: addCountPost
+    // })
+    // .then(res => console.log(res.data,'retrieved')) //update the store here
+
+    api.pressButton(addCountPost)
     .then(res => console.log(res.data,'retrieved')) //update the store here
   }
 
@@ -47,9 +51,10 @@ const EmojiButton = props => {
 
   return (
     <div className="emojiButton">
-      <span>Like</span>
+      <span>Like </span>
       <button
         onClick={onThumbsUp}
+        className="eButton"
       >
         {props.project.counts}{'\u2728'}
       </button>

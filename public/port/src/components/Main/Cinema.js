@@ -2,6 +2,8 @@ import React from 'react';
 import Video from './Video';
 import Description from './Description';
 import Title from './Title';
+import Comments from './Comments';
+import EmojiButton from './EmojiButton';
 
 
 const Cinema = props => {
@@ -13,6 +15,11 @@ const Cinema = props => {
         <Title
           project={props.project}
         />
+
+        <EmojiButton
+          onThumbsUp={props.onThumbsUp}
+          project={props.project}
+        />
       </div>
       <div className="scene">
         <Video
@@ -22,9 +29,13 @@ const Cinema = props => {
         />
       </div>
       <div className="sideBlock sideBlockRight">
-        <Description
+        {/*<Description
           project={props.project}
           onThumbsUp={props.onThumbsUp}
+        />*/}
+        <Comments
+          project={props.project}
+          onCreateComment={props.onCreateComment}
         />
 
       </div>

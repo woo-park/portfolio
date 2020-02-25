@@ -58,9 +58,20 @@ class App extends Component {
 
     let observer = new IntersectionObserver(navCheck, options)
 
+    window.addEventListener("resize", function(){
+        bubble.style.top = '-200px';
+        bubble.style.left = '-200px';
+        sections.forEach(section => {section.style.color = '#222222'}); //change all to black
+        // console.log('RESIZED')
+    });
+
     sections.forEach(section => {
       // observer.observe(section);
+
+
       section.addEventListener('mouseenter', (element)=>{
+        sections.forEach(section => {section.style.color = '#222222'}); //change all to black once in the beginning
+        element.target.style.color = '#F8F8FF';
         navCheck(element)
       })
     })
@@ -68,6 +79,7 @@ class App extends Component {
     function navCheck (entry) {
       // entries.forEach(entry => {
         const className = entry.target.className;
+
         console.log(className);
         const activeAnchor = document.querySelector(`.${className}Loc`)
         // const gradientIndex = entry.target.getAttribute('data-index');
@@ -108,7 +120,7 @@ class App extends Component {
 
         {/* <Switch> doesn't work */}
         <div className="container">
-          <div className="item-a header">
+          <div className="item-a header one-edge-shadow">
             <div className="portfolioLogo"></div>
             <div className="headerLogo"></div>
             <Navigation />

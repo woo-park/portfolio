@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Cinema from './Cinema';
 import { thumbsUp, createComment } from './../../actions';
 import Comments from './Comments';
+import VideoMargin from './VideoMargin';
 
 const logNodes = (projectId, sideBlockLeft, sideBlockRight, scene, video) => {
   console.log(projectId,'projectid entering')
@@ -85,14 +86,24 @@ class Main extends Component {
               onVideoLeave={this.onVideoLeave}
               onVideoEnter={this.onVideoEnter}
               onThumbsUp={this.onThumbsUp}
+              onCreateComment={this.onCreateComment}
             />
             <div
               className="bar"
             >
-              <Comments
+              <VideoMargin
                 project={project}
-                onCreateComment={this.onCreateComment}
+                onThumbsUp={this.onThumbsUp}
               />
+              {
+                /*
+                <Comments
+                  project={project}
+                  onCreateComment={this.onCreateComment}
+                />
+                */
+              }
+
             </div>
 
           </div>

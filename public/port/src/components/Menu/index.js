@@ -13,7 +13,7 @@ import MenuLink from './MenuLink';
 
 const Menu = props => {
   return(
-    <ul>
+    <ul className="menuList">
       {props.projects.map(project => (
         <MenuLink
           key={project.id}

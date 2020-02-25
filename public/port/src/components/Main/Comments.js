@@ -18,7 +18,7 @@ class Comments extends Component {
     if(this.state.author == ''){
       this.state.author = 'Anonymous'
     }
-    
+
     this.props.onCreateComment({
       projectId: this.props.project.id,
       comment: this.state.comment,
@@ -55,14 +55,26 @@ class Comments extends Component {
 
   render() {
     return (
-      <div className="">
-        {this.props.project.comment != undefined ? (<div>{this.props.project.comment.map((each, index) =>
+      <div className="commentSection">
 
-          <Comment
-            key={index}
-            comment={each}
-          />
-        )}</div>) : 'no comments yet'}
+        <div>
+          <button
+                  className="button button-default"
+                  onClick={this.toggleCommentForm}
+          >
+            + New Comment
+          </button>
+          
+          {this.props.project.comment != undefined ? (<div>{this.props.project.comment.map((each, index) =>
+
+            <Comment
+              key={index}
+              comment={each}
+            />
+          )}</div>) : 'no comments yet'}
+        </div>
+
+
 
         {this.state.showCommentForm && (
           <form
@@ -77,13 +89,16 @@ class Comments extends Component {
               type="text"
               placeholder="author..."
             />
-            <input
-              className="full-width-input"
+            <textarea rows="2" cols="20" wrap="hard"
+              className="full-width-input full-height-input"
               onChange={this.onCommentChange}
               value={this.state.comment}
               type="text"
               placeholder="comment..."
-            />
+            >
+
+            </textarea>
+
             <button
               className="button"
               type="submit"
@@ -92,15 +107,6 @@ class Comments extends Component {
             </button>
           </form>
         )}
-
-        <div className="tasks-header">
-          <button
-                  className="button button-default"
-                  onClick={this.toggleCommentForm}
-          >
-            + New Comment
-          </button>
-        </div>
 
       </div>
     );
