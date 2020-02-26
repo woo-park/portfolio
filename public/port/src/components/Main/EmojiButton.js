@@ -1,12 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import * as api from '../../api'
+import ReactGA from 'react-ga';
 
 const EmojiButton = props => {
 
+
+  // const clickHandler = () => {
+  //   ReactGA.event({
+  //     category: 'Button',
+  //     action: 'Pressed Like Button'
+  //   });
+  // }
   function onThumbsUp() {
     props.onThumbsUp(props.project.id);
-
+      ReactGA.event({
+        category: 'Emoji Button',
+        action: `id # ${props.project.id} pressed -> counts : ${props.project.counts}`
+      });
 
     let addCountPost = {
       id: props.project.id,

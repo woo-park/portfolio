@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,7 +15,7 @@ import {BrowserRouter , Switch, Route} from 'react-router-dom';
 import {
   fetchProjects,
 } from './actions';
-
+import ReactGA from 'react-ga';
 
 
 const mockProjects = [
@@ -44,7 +45,22 @@ class App extends Component {
     }
   }
 
+  // import ReactGA from 'react-ga';
+  // const clickHandler = () => {
+  //   ReactGA.event({
+  //     category: 'Button',
+  //     action: 'Pressed Like Button'
+  //   });
+  // }
+
+
+
   componentDidMount() {
+
+    const trackingId = "UA-156446443-1"; // Replace with your Google Analytics tracking ID
+     ReactGA.initialize(trackingId);
+     // ReactGA.pageview('/')
+     ReactGA.pageview(window.location.pathname + window.location.search)
 
     this.props.dispatch(fetchProjects());
     console.log('dispatched?')

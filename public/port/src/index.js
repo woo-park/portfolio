@@ -14,7 +14,7 @@ import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 
 // import createSagaMiddleware from 'redux-saga';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
 const rootReducer = (state = {}, action) => {
   return {
@@ -23,9 +23,9 @@ const rootReducer = (state = {}, action) => {
     page: page(state.page, action),
   };
 };
-
-const trackingId = "UA-156446443-1"; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
+//
+// const trackingId = "UA-156446443-1"; // Replace with your Google Analytics tracking ID
+// ReactGA.initialize(trackingId);
 //
 // function initializeReactGA() {
 //     ReactGA.initialize('UA-123791717-1');
