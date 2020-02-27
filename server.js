@@ -17,11 +17,14 @@ server = require('http').Server(app);
 
 const io = require('socket.io')(server);
 
+const { Artwork } = require('./db2.js');
 // for access
 require('./db');
-require('./db2');
-const { Artwork } = require('./db2.js');
+// require('./db2');
 
+
+console.log('artwork => ', Artwork)
+console.log('project => ', Project)
 
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
