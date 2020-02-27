@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Real-Time VR</title>
+    <script src="./p5/p5.min.js" type="text/javascript"></script>
+    <script src="./p5/p5.dom.js" type="text/javascript"></script>
+    <script src="./p5/p5.sound.min.js" type="text/javascript"></script>
+      <!-- A-Frame libraries -->
+    <script language="javascript" type="text/javascript" src="./p5/aframe.min.js"></script>
+
+    <!-- AFrameP5 library -->
+    <script language="javascript" type="text/javascript" src="./p5/aframep5.js"></script>
+
+
+<!--
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script> -->
+
+</head>
+
+  <style type="text/css" media="screen">
+  #defaultCanvas0 {
+    position:absolute;
+    z-index: 999;
+    left:0;
+    top:0;
+  }
+  body {
+				padding: 0;
+				margin: 0;
+			}
+  </style>
+
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+
+    <a-scene id="VRScene">
+      <!-- ok make it move based on mouse too, next task -->
+      <!-- <a-camera wasd-controls-enabled="false"></a-camera> -->
+      <img src="images/asphalt.png" id="asphalt">
+
+        <!-- <a-asset id="tree1_obj" src="./objects/tree1/model.obj"></a-asset>
+        <a-asset id="tree1_mtl" src="./objects/tree1/materials.mtl"></a-asset> -->
+
+
+        <img src="./images/stonebrick_mossy.png" id="stone">
+        <img src="./images/prismarine_bricks_blue.png" id="blueStone">
+
+
+        <img src="./images/stone_andesite_smooth.png" id="brick">
+
+        <a-asset id="ghost2_obj" src="./objects/ghost2/model.obj"></a-asset>
+        <a-asset id="ghost2_mtl" src="./objects/ghost2/materials.mtl"></a-asset>
+
+        <a-asset id="treasure" src="./objects/treasure/model.obj"></a-asset>
+        <a-asset id="treasure_mtl" src="./objects/treasure/materials.mtl"></a-asset>
+        <!--
+        <a-asset id="tornado_obj" src="./objects/tornado/model.obj"></a-asset>
+        <a-asset id="tornado_mtl" src="./objects/tornado/materials.mtl"></a-asset> -->
+
+    </a-scene>
+  </body>
+</html>

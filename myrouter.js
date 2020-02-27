@@ -10,6 +10,10 @@ router.get('/wave', (req, res) => {
 	res.sendFile(path.join(__dirname + '/wave/'))
 });
 
+router.get('/vr', (req, res) => {
+  res.sendFile(path.join(__dirname + '/vr/'))
+})
+
 
 
 
