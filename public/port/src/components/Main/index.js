@@ -55,6 +55,7 @@ class Main extends Component {
     logNodes(projectId, sideBlockLeft, sideBlockRight, scene, video);
 
     video.play();
+
     let rotateAmount = 50;
     sideBlockLeft.style.transform = `rotateY(-${rotateAmount}deg)`;
 

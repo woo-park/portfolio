@@ -33,7 +33,7 @@ class About extends Component {
                           <h3>SKILLs</h3>
                           <hr />
                           <br />
-                          <ul>
+                          <ul className="bulletPoints">
                               <li>Languages: English, Korean</li>
                               <li>Programming Languages: JavaScript [Node.js, React.js, Three.js, AFrame.js, P5.js, D3.js, React Native, Redux, Processing.js], Python, HTML/CSS</li>
                               <li>MS Office: Microsoft Word, Microsoft Excel, Microsoft PowerPoint</li>
@@ -50,12 +50,12 @@ class About extends Component {
                           <h4>New York University</h4>
                           <hr />
                           <h5><i>Intro to Web Design, Grader</i></h5>
-                          <ul>
+                          <ul className="bulletPoints">
                               <li>Tested and inspected students’ projects on both remote and local host. Graded student projects under professor’s supervision.</li>
                           </ul>
 
                           <h5><i>Intro to Web Design, Teaching Assistant</i></h5>
-                          <ul>
+                          <ul className="bulletPoints">
                               <li>Provided students with detailed explanations of core ideas presented in class.</li>
                           </ul>
                       </div>
@@ -63,7 +63,7 @@ class About extends Component {
                       <div className="jobDescription">
                           <h4>ROK Auxiliary Policeman</h4>
                           <hr />
-                          <ul >
+                          <ul className="bulletPoints">
                             <li>Developed diet plans for a team of 200+ Auxiliary Policeman.
                             </li>
                             <li>Educated and provided dietary suggestion to promote the philosophy of good nutrition.
@@ -77,7 +77,7 @@ class About extends Component {
                       <div className="jobDescription">
                           <h4>Note Inc.</h4>
                           <hr />
-                          <ul >
+                          <ul className="bulletPoints">
                             <li>Acted as liaison for international company partners. Communicated with clients from outsourced factories.
                             </li>
                             <li>Translated and interpreted for both internal teams and external partner companies during the 18th Hong Kong Mega Showcase.

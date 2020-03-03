@@ -42,6 +42,7 @@ class App extends Component {
     super(props);
     this.state = {
       mockProjects: mockProjects,
+      mobile: false,
     }
   }
 
@@ -74,11 +75,26 @@ class App extends Component {
 
     let observer = new IntersectionObserver(navCheck, options)
 
+
+    const checkDevice = () => {
+      if (window.screen.width < 660) {
+        this.setState({mobile: true})
+        return
+      } else {
+        this.setState({mobile: false})
+      }
+      console.log('mobile', this.state.mobile)
+    }
+    checkDevice();
+
+
     window.addEventListener("resize", function(){
         bubble.style.top = '-200px';
         bubble.style.left = '-200px';
         sections.forEach(section => {section.style.color = '#222222'}); //change all to black
         // console.log('RESIZED')
+        checkDevice();
+
     });
 
     sections.forEach(section => {
@@ -142,7 +158,9 @@ class App extends Component {
             <Navigation />
           </div>
           <div className="item-c side middle">
+            {this.state.mobile == true ? <div className="message">Please use desktop to experience & experiment the provided links.</div> : ''}
             <Menu projects={this.props.projects}/>
+
           </div>
 
           <div className="item-b main middle">

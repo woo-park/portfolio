@@ -9,7 +9,7 @@ class FeedBack extends Component {
 
   render () {
     return(
-        <div>FeedBack component</div>
+        <div></div>
     )
   }
 }
