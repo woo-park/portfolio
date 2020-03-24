@@ -152,7 +152,7 @@ function sketch(p) {
       */
 
       let randomSlicePosition = Math.floor((Math.random() * emojiString.length/2))*2
-      console.log(randomSlicePosition,'rs')
+      // console.log(randomSlicePosition,'rs')
       currentEmoji = emojiString.slice(randomSlicePosition,randomSlicePosition+2)
 
       sketchAction = 'ELLIPSE'
@@ -273,7 +273,7 @@ function sketch(p) {
 
           let randomSlice = Math.abs(Math.floor(((Math.random() * each.emojiSurrogates.length-2)/2))*2)
 
-          console.log('rannumm',randomSlice)
+          // console.log('rannumm',randomSlice)
           this.emojiSurrogates = each.emojiSurrogates.slice(randomSlice,randomSlice+2)
         }
       })
@@ -982,7 +982,7 @@ function Sketch(props, action) {
 
   const onClickInputButton = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
 
     // if(inputBtnColor === 'grey'){
     //    e.target.style.backgroundColor = 'null'
@@ -1016,7 +1016,7 @@ function Sketch(props, action) {
   }
 
   useEffect(()=>{
-    console.log(selectedInput)
+    // console.log(selectedInput)
   },[selectedInput])
 
   const resetForm = () => {
@@ -1122,7 +1122,7 @@ function Sketch(props, action) {
           return index === selectedNodeIndex ? updatedNode : obj;
         })
 
-        console.log(nextNodesState,'next nodes state')
+        // console.log(nextNodesState,'next nodes state')
         setNodesState(nextNodesState)
     }
 
