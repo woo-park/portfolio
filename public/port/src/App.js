@@ -6,7 +6,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import Main from './components/Main';
-import Emoji from './components/Emoji';
+import FindEmoji from './components/FindEmoji';
 import About from './components/About';
 import Menu from './components/Menu';
 
@@ -180,7 +180,7 @@ class App extends Component {
 
             <Route exact path="/" component={Main} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/emoji" component={Emoji} />
+            <Route exact path="/emoji" component={FindEmoji} />
           </div>
           <div className="item-d footer">
           </div>

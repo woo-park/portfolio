@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Sketch from '../P5Wrapper/sketch.js';
 
-class FeedBack extends Component {
+class FindEmoji extends Component {
 
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps)(FeedBack)
+export default connect(mapStateToProps)(FindEmoji)
 
 
 //

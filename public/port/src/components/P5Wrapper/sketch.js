@@ -1246,10 +1246,10 @@ const updatedHeaders = typeElements.headers.map((obj, index) => {
         className="formSize"
       >
         <div style={divStyle}>
-        {question1.map((item)=>
+        {question1.map((item,index)=>
           <input
 
-
+            key={index}
             className="full-width-input inputButton"
             onClick={onClickInputButton}
             type="button"
@@ -1258,8 +1258,9 @@ const updatedHeaders = typeElements.headers.map((obj, index) => {
           />)}
         </div>
         <div style={divStyle}>
-        {question2.map((item)=>
+        {question2.map((item, index)=>
           <input
+            key={index}
             className="full-width-input inputButton"
             onClick={onClickInputButton}
             type="button"
