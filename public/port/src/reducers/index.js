@@ -15,6 +15,11 @@ export function page(state = initialPageState, action) {
         projectsLength: projects.length,
 	    }
 	  }
+    // case 'CHANGE_PAGE':
+    //   return {
+    //     ...state,
+    //     myAction: 'CHANGE_PAGE'
+    //   }
     case 'CREATE_COMMENT':
       const { projectIdComment } = action.payload;
       const { comment } = action.payload;
@@ -65,7 +70,6 @@ export function page(state = initialPageState, action) {
           projects: [...projects]
         }
       }
-
 	  default: {
 	    return state;
 	  }
@@ -78,4 +82,8 @@ function getProjectByProjectId(projects, projectId) {
   console.log(matchingProject,'matchingProject')
 
   return matchingProject[0];
+}
+
+export function lastAction(state = null, action) {
+  return action;
 }

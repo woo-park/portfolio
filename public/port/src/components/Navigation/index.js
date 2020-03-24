@@ -1,27 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default () => (
-  <div className="navigation">
-    <Link className="navigation-list" to="/">
-      <section className="mymain">
-        <span className="mymainLoc">Main</span>
-      </section>
+const Navigation = (props) => {
+  const onNavClick = () => {
+    props.dispatch({
+      type:'CHANGE_PAGE'
+    })
+  }
 
-    </Link>
-    <Link className="navigation-list" to="/about">
-      <section className="myabout">
-        <span className="myaboutLoc">About</span>
-      </section>
-    </Link>
-    <Link className="navigation-list" to="/feedback">
+  return(
+    <div className="navigation">
+      <Link className="navigation-list" to="/">
+        <section className="mymain">
+          <span className="mymainLoc"
+                onClick={onNavClick}
+          >Main</span>
+        </section>
+
+      </Link>
+      <Link className="navigation-list" to="/about">
+        <section className="myabout">
+          <span className="myaboutLoc"
+                onClick={onNavClick}
+          >About</span>
+        </section>
+      </Link>
+      <a href="/emoji">
       <section className="myfeedback">
-        <span className="myfeedbackLoc">Feedback</span>
+        <span className="myfeedbackLoc"
+              onClick={onNavClick}
+        >Emoji Project</span>
       </section>
 
-    </Link>
-    <div className="bubble"></div>
+      </a>
+      {
+        /*
+          <Link className="navigation-list" to="/feedback">
 
 
-  </div>
-);
+          </Link>
+        */
+      }
+
+      <div className="bubble"></div>
+
+
+    </div>
+  )
+};
+
+
+export default connect()(Navigation);

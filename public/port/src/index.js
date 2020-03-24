@@ -4,7 +4,7 @@ import App from './App';
 import { Provider } from 'react-redux'
 import './index.css';
 // import { projects, tasks, page } from './reducers';
-import { page } from './reducers';
+import { page, lastAction } from './reducers';
 
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -21,6 +21,7 @@ const rootReducer = (state = {}, action) => {
     // projects: projects(state.projects, action),
     // tasks: tasks(state.tasks, action),
     page: page(state.page, action),
+    lastAction: lastAction(state.page, action),
   };
 };
 //
@@ -41,9 +42,10 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(thunk, logger))
 );   //pass in the reducer to the store
 
+
 ReactDOM.render(
   <Provider store={store}>
-      <App />
+      <App store={store} />
   </Provider>,
   document.getElementById('root')
 );

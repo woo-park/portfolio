@@ -39,6 +39,7 @@ element.style.setProperty("--my-var", jsVar + 4);
   font-size: 0.9rem;
   margin:0;
   padding:0;
+  /* cursor: none; */
 }
 a {
   text-decoration: none;
@@ -266,7 +267,13 @@ a {
 
 }
 /* desktop */
+
 @media (width >= 40em) {
+
+
+  input[type=button], input[type=submit] {
+    cursor:pointer;
+  }
 
   * {
     /* font-family: 'Noto Serif JP', serif;
@@ -352,7 +359,7 @@ a {
   }
 
   .middle{
-
+    /* position: relative; */
   }
   .menuList{
     position: sticky;
@@ -673,5 +680,30 @@ a {
   }
 
 
+
+
   /* end of desktop */
+}
+
+
+
+/* p5 canvas */
+
+.mySketch{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1;
+  pointer-events: none;
+
+  /*
+  1 is upfront - works - with p.clear method
+  0 is behind middle main
+  pointer-events: none; the key
+  https://forum.processing.org/two/discussion/17559/passing-clicks-through-a-p5js-canvas-to-dom-elements-underneath
+   */
+}
+
+.formSize{
+  width: 400px;
 }

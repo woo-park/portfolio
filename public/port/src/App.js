@@ -6,7 +6,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import Main from './components/Main';
-import FeedBack from './components/FeedBack';
+import Emoji from './components/Emoji';
 import About from './components/About';
 import Menu from './components/Menu';
 
@@ -16,6 +16,8 @@ import {
   fetchProjects,
 } from './actions';
 import ReactGA from 'react-ga';
+
+import Sketch from './components/P5Wrapper/sketch.js';
 
 
 const mockProjects = [
@@ -57,11 +59,13 @@ class App extends Component {
 
 
   componentDidMount() {
+    document.title = 'Woo Park Portfolio'
 
     const trackingId = "UA-156446443-1"; // Replace with your Google Analytics tracking ID
      ReactGA.initialize(trackingId);
      // ReactGA.pageview('/')
      ReactGA.pageview(window.location.pathname + window.location.search)
+
 
     this.props.dispatch(fetchProjects());
     console.log('dispatched?')
@@ -146,7 +150,6 @@ class App extends Component {
   render() {
     console.log(this.props,'from app js');
     console.log(this.states,'from app js');
-
     return(
       <BrowserRouter>
 
@@ -159,22 +162,29 @@ class App extends Component {
           </div>
           <div className="item-c side middle">
             {this.state.mobile == true ? <div className="message">Please use desktop to experience & experiment the provided links.</div> : ''}
-            <Menu projects={this.props.projects}/>
+            <Menu projects={this.props.projects}
+            />
 
           </div>
 
           <div className="item-b main middle">
+
+          {/*
+            <Sketch
+
+
+            />
+            */}
+
+
+
             <Route exact path="/" component={Main} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/feedback" component={FeedBack} />
+            <Route exact path="/emoji" component={Emoji} />
           </div>
           <div className="item-d footer">
-
-
           </div>
         </div>
-
-
       </BrowserRouter>
     )
   }
