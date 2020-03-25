@@ -1,6 +1,6 @@
 import React from 'react';
 import Video from './Video';
-import Description from './Description';
+// import Description from './Description';
 import Title from './Title';
 import Comments from './Comments';
 import EmojiButton from './EmojiButton';
@@ -46,7 +46,7 @@ const Cinema = props => {
 export default Cinema;
 
 
-{/*
+/*
   {props.project.map(project => (
     <Video
       key={project.id}
@@ -60,4 +60,4 @@ export default Cinema;
           key={project.id}
           project={project}
         />
-        */}
+        */

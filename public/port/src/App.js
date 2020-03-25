@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import { connect } from 'react-redux';
@@ -10,14 +8,14 @@ import FindEmoji from './components/FindEmoji';
 import About from './components/About';
 import Menu from './components/Menu';
 
-import {BrowserRouter , Switch, Route} from 'react-router-dom';
+import {BrowserRouter , Route} from 'react-router-dom';
 
 import {
   fetchProjects,
 } from './actions';
 import ReactGA from 'react-ga';
 
-import Sketch from './components/P5Wrapper/sketch.js';
+// import Sketch from './components/P5Wrapper/sketch.js';
 
 
 const mockProjects = [
@@ -180,7 +178,7 @@ class App extends Component {
 
             <Route exact path="/" component={Main} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/emoji" component={FindEmoji} />
+            {/*<Route exact path="/emoji" component={FindEmoji} />*/}
           </div>
           <div className="item-d footer">
           </div>

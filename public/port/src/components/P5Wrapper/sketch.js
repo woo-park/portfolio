@@ -1,38 +1,38 @@
 
 import React from 'react';
 import P5Wrapper from 'react-p5-wrapper';
-import p5 from "p5";
-import { connect } from 'react-redux';
-import { applyMiddleware } from 'redux';
+// import p5 from "p5";
+// import { connect } from 'react-redux';
+// import { applyMiddleware } from 'redux';
 import { useState, useEffect, useRef } from 'react';
 
 function sketch(p) {
 
-  var boxColor = p.color('#172A3A');
-  let xPos = 100;
-  let yPos = 100;
-  let unstartedLength = 0;
+  // var boxColor = p.color('#172A3A');
+  // let xPos = 100;
+  // let yPos = 100;
+  // let unstartedLength = 0;
 
   let status = '';
-  let sketchAction = '';
-  let lastAction = '';
+  // let sketchAction = '';
+  // let lastAction = '';
 
   let num = 20; //remembers 20 positions
   let mouseXpos = [];
   let mouseYpos = [];
 
-  let panelPosX = p.windowWidth/2;
-  let panelPosY = 0;
+  // let panelPosX = p.windowWidth/2;
+  // let panelPosY = 0;
 
   let panelLeftPosX = 0;
   let panelLeftPosY = 0;
 
   //dropBall
-  let velocity = 0
-  let y = 5
-  let x = 33
-  let radius = 15
-  let acceleration = 0.3
+  // let velocity = 0
+  // let y = 5
+  // let x = 33
+  // let radius = 15
+  // let acceleration = 0.3
 
   // network
   let nodesLength = 100; //initial
@@ -143,8 +143,8 @@ function sketch(p) {
 
     p.keyPressed = () => {
       console.log(p.frameRate())
-      boxColor = p.color(p.random(255),p.random(255),p.random(255));
-      xPos += 100;
+      // boxColor = p.color(p.random(255),p.random(255),p.random(255));
+      // xPos += 100;
       /*
       your todos -> log in system
       emoji changes -> everytime clicks
@@ -155,11 +155,11 @@ function sketch(p) {
       // console.log(randomSlicePosition,'rs')
       currentEmoji = emojiString.slice(randomSlicePosition,randomSlicePosition+2)
 
-      sketchAction = 'ELLIPSE'
+      // sketchAction = 'ELLIPSE'
 
       }
     p.keyReleased = () => {
-      sketchAction = 'SOMETHING'
+      // sketchAction = 'SOMETHING'
     }
 
   } //okay this is special method nice
@@ -202,25 +202,25 @@ function sketch(p) {
 
   } // end of setup
 
-  function toUTF16(codePoint) {
-    var TEN_BITS = parseInt('1111111111', 2);
-    function u(codeUnit) {
-      return '\\u'+codeUnit.toString(16).toUpperCase();
-    }
-
-    if (codePoint <= 0xFFFF) {
-      return u(codePoint);
-    }
-    codePoint -= 0x10000;
-
-    // Shift right to get to most significant 10 bits
-    var leadSurrogate = 0xD800 + (codePoint >> 10);
-
-    // Mask to get least significant 10 bits
-    var tailSurrogate = 0xDC00 + (codePoint & TEN_BITS);
-
-    return u(leadSurrogate) + u(tailSurrogate);
-  }
+  // function toUTF16(codePoint) {
+  //   var TEN_BITS = parseInt('1111111111', 2);
+  //   function u(codeUnit) {
+  //     return '\\u'+codeUnit.toString(16).toUpperCase();
+  //   }
+  //
+  //   if (codePoint <= 0xFFFF) {
+  //     return u(codePoint);
+  //   }
+  //   codePoint -= 0x10000;
+  //
+  //   // Shift right to get to most significant 10 bits
+  //   var leadSurrogate = 0xD800 + (codePoint >> 10);
+  //
+  //   // Mask to get least significant 10 bits
+  //   var tailSurrogate = 0xDC00 + (codePoint & TEN_BITS);
+  //
+  //   return u(leadSurrogate) + u(tailSurrogate);
+  // }
 
 
   class Node {
@@ -951,7 +951,7 @@ function Sketch(props, action) {
 
     if(selectedNode > -1) {
       const nextState = nodesState.map(each => {
-        if(each.id == selectedNode) {
+        if(each.id === selectedNode) {
 
           if(selectedInput.length < 1) {
             return each                     //ensures interests are selected
@@ -1000,7 +1000,7 @@ function Sketch(props, action) {
     //   }
     // }
 
-    if(e.target.style.backgroundColor != 'grey') {
+    if(e.target.style.backgroundColor !== 'grey') {
       e.target.style.backgroundColor = 'grey'
       if (!selectedInput.includes(e.target.value)){
         setSelectedInput([...selectedInput, e.target.value])
@@ -1096,11 +1096,11 @@ function Sketch(props, action) {
     // console.log(foundNode,'FOUND NODE')
 
     if(selectedNode > -1) {
-        const found = nodesState.find(element => element.id == selectedNode);
+        const found = nodesState.find(element => element.id === selectedNode);
         // console.log(found,'found')
 
         let selectedNodeIndex = nodesState.findIndex((element)=>{
-          return element.id == selectedNode
+          return element.id === selectedNode
         })
 
 
@@ -1150,9 +1150,9 @@ const updatedHeaders = typeElements.headers.map((obj, index) => {
     padding: '1rem'
   }
 
-  let grey = {
-    backgroundColor: inputBtnColor
-  }
+  // let grey = {
+  //   backgroundColor: inputBtnColor
+  // }
   const inputContainer = {
     width: '400px',
     display:'column',

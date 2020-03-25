@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PostForm from './PostForm';
 import Comment from './Comment';
 
 class Comments extends Component {
@@ -15,8 +14,9 @@ class Comments extends Component {
 
   onCreateComment = (e) => {
     e.preventDefault();
-    if(this.state.author == ''){
-      this.state.author = 'Anonymous'
+    if(this.state.author === ''){
+      // this.state.author = 'Anonymous'
+      this.setState({author: 'Anonymous'})
     }
 
     this.props.onCreateComment({
@@ -64,8 +64,8 @@ class Comments extends Component {
           >
             + New Comment
           </button>
-          
-          {this.props.project.comment != undefined ? (<div>{this.props.project.comment.map((each, index) =>
+
+          {this.props.project.comment !== undefined ? (<div>{this.props.project.comment.map((each, index) =>
 
             <Comment
               key={index}

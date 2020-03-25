@@ -31,7 +31,7 @@ export function page(state = initialPageState, action) {
       //     [each.comment != undefined ? each.comment.length : 0]: comment}
       // }})
       myProjects.forEach((each) => {    //figure out arr or whateve
-        if (each.id == projectIdComment) {
+        if (each.id === projectIdComment) {
            // if (!each.comment) {
            //   each.comment = [];
            //   each.comment.push(comment);
@@ -62,7 +62,7 @@ export function page(state = initialPageState, action) {
         const pushedProject = getProjectByProjectId(projects, projectId);   //dont even need this
         console.log(pushedProject)
         // projects = projects.filter(each => each.id != projectId);
-        projects.forEach((each) => {if (each.id == projectId) { each.counts += 1}})   //changes inplace
+        projects.forEach((each) => {if (each.id === projectId) { each.counts += 1}})   //changes inplace
 
         return {
           ...state,

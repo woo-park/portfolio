@@ -26,14 +26,18 @@ const Navigation = (props) => {
           >About</span>
         </section>
       </Link>
-      <a href="/emoji">
-      <section className="myfeedback">
-        <span className="myfeedbackLoc"
-              onClick={onNavClick}
-        >Emoji Project</span>
-      </section>
 
-      </a>
+      {/*
+        <a href="/find">
+        <section className="myfeedback">
+          <span className="myfeedbackLoc"
+                onClick={onNavClick}
+          >Emoji Project</span>
+        </section>
+
+        </a>
+
+        */}
       {
         /*
           <Link className="navigation-list" to="/feedback">

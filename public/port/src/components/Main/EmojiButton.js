@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import * as api from '../../api'
 import ReactGA from 'react-ga';
 

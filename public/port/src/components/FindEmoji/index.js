@@ -5,9 +5,9 @@ import Sketch from '../P5Wrapper/sketch.js';
 
 class FindEmoji extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render () {
     return(
@@ -22,7 +22,7 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps)(FindEmoji)
+export default FindEmoji
 
 
 //

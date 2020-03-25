@@ -1,5 +1,6 @@
 import * as api from '../api';
 
+/*
 const mockProjects = [
   {
     id: 1,
@@ -104,6 +105,7 @@ const mockProjects = [
     videoURL:'./vids/altgenerator_0x.mp4',
   },
 ]
+*/
 
 // export function fetchProjects(projects) {
 //   return {

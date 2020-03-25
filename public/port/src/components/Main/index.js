@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Cinema from './Cinema';
 import { thumbsUp, createComment } from './../../actions';
-import Comments from './Comments';
+// import Comments from './Comments';
 import VideoMargin from './VideoMargin';
 
 const logNodes = (projectId, sideBlockLeft, sideBlockRight, scene, video) => {
