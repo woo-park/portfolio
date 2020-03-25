@@ -1,13 +1,709 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic|Halant|Noto+Serif+JP|Unna&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+/*
+// get variable from inline style
+element.style.getPropertyValue("--my-var");
+
+// get variable from wherever
+getComputedStyle(element).getPropertyValue("--my-var");
+
+// set variable on inline style
+element.style.setProperty("--my-var", jsVar + 4);
+ */
+
+:root {
+  --bgBlue:#0D3B66;
+  --bgWhite:#F8F8FF;
+  --bgYellow:#F4D35E;
+  --bgOrange:#EE964B;
+  --bgRed:#F95738;
+  --bgGrey:#8CADA7;
+  --bgBlack:#222222;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* mobile */
+.container {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  width:100%;
+}
+
+*{
+  font-family: 'LATO';
+  font-size: 0.9rem;
+  margin:0;
+  padding:0;
+  /* cursor: none; */
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (width < 40em) {
+
+
+
+  html, body {
+    width: 100%;
+    height: 100vh;
+    /* overflow:hidden; */
+  }
+
+  .header{
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    height:100%;
+    width: auto;
+  }
+
+  .headerLogo{
+    opacity: 0.1;
+    background-blend-mode: multiply;
+    width:100%;
+    min-width: 300px;
+    height:45px;
+    background-image: url('./assets/images/logo.svg');
+    background-repeat: repeat;
+    position: absolute;
+  }
+
+  .portfolioLogo{
+    width:145px;
+    height:41px;
+    background-image: url('./assets/images/portfolio.svg');
+    /* background-repeat:no-repeat;
+    background-position:top; dont need it bc size is correct */
+    margin:0 auto;
+  }
+
+  /* from here  */
+  .navigation{
+    display: flex;
+    justify-content:space-around;
+
+    /* position: relative; */
+  }
+
+  .navigation-list{
+    color:var(--bgBlack);
+
+    width:100px;
+    text-align: center;
+    /* font-weight:bolder; */
+    font-size: 1rem;
+    /* margin-right:2rem; */
+    /* padding:1px; */
+    /* font-weight:bold; */
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Unna', serif;
+    font-family: 'Gentium Basic', serif;
+    font-family: 'IBM Plex Sans';
+
+  }
+  .navigation-list:hover {
+    /* background-color: var(--bgOrange); */
+    /* color:var(--bgWhite); */
+    transition: all 500ms ease-in-out;
+  }
+  .bubble{
+    position: absolute;
+    z-index: -2;
+    background: var(--bgBlack);
+    transition: all 500ms ease-in-out;
+    transform: scale(1.5);
+  }
+  /* to here is the same as desktop */
+
+
+
+  .side{
+    margin-top:3px;
+    border-top: 1px solid #444444;
+    width:100%;
+    border-bottom: 1px solid #444444;
+
+  }
+
+  .hyperLink:hover{
+    opacity: 0.5;
+  }
+  .side{
+
+  }
+
+  .menuList{
+    margin-top:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  li{
+    list-style: none;
+    padding:5px;
+  }
+
+  .sideBlockLeft{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    margin-top:2rem;
+
+  }
+  .eButton{
+    border:1px solid #444444;
+    border-radius: 5px;
+    font-size:0.7rem;
+    padding-left:2px;
+  }
+  .sideBlockRight{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .task-list-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .commentSection{
+    margin-top:-4px;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+  }
+
+
+
+  .button {
+    padding: 10px;
+    background: #222;
+    color: #fff;
+    border: 1px solid transparent;
+    borderRadius: 6px;
+    /* this made font larger */
+    /* font: inherit; */
+    width:100%;
+    cursor: pointer
+  }
+  .main{
+
+  }
+  .footer{
+
+  }
+
+  .cinema{
+
+  }
+
+  .description{
+    padding: 1rem;
+    line-height: 1.5;
+    border-bottom: 2px double #444444
+  }
+
+  video{
+    width: 100%    !important;
+    height: auto   !important;
+  }
+  /*
+  .bar{
+    width:100%;
+    height:50px;
+    background-image: url('./assets/images/doublebar.svg');
+    background-color: rgba(238, 238, 238, 0.81) !important;
+    background-blend-mode: color;
+
+  } */
+
+  #about_page{
+    display: flex;
+    /* width: auto; */
+    flex-direction: column;
+    /* top */
+
+    /* overrides the app - center behavior */
+  }
+
+  .about_sections {
+    width: 90%;
+    /* padding:1rem; */
+    padding:1rem;
+    margin-bottom:2rem;
+  }
+
+  .about_sections p{
+    margin-top:1rem;
+    margin-bottom: 1rem;
+  }
+
+  .jobDescription {
+      margin-bottom:4rem;
+  }
+
+  .bulletPoints li {
+    list-style: disc;
+    list-style-position:inside;
+  }
+
+  .message{
+    text-align: center;
+    background-color: #222222;
+    color:white;
+    width: auto;
+  }
+
+}
+/* desktop */
+
+@media (width >= 40em) {
+
+
+  input[type=button], input[type=submit] {
+    cursor:pointer;
+  }
+
+  * {
+    /* font-family: 'Noto Serif JP', serif;
+    font-family: 'Unna', serif;
+    font-family: 'Gentium Basic', serif; */
+    /* font-family: 'IBM Plex Sans'; */
+
+    line-height: 1.6;
+    /* font-family: 'Halant', serif; */
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
+  .item-a {
+    grid-area: header;
+    width:100%;
+    /* border:1px dashed black; */
+
+  }
+  .item-b {
+    grid-area: main;
+    width:100%;
+    /* border:1px dashed black; */
+  }
+  .item-c {
+    grid-area: sidebar;
+    width:100%;
+    /* border:1px dashed black; */
+  }
+  .item-d {
+    grid-area: footer;
+    width:100%;
+    /* border:1px dashed black; */
+  }
+
+  .container {
+    height:auto;
+    /* border:1px solid grey; */
+    /* background-color:blue; */
+    /* height:100vh;
+    width:100%; */
+
+    justify-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas:
+      "header header header header header header"
+      "main main main main main sidebar"
+      "footer footer footer footer footer footer";
+  }
+
+  li {
+    list-style: none;
+    text-align:left;
+    list-style-position:outside;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    padding-left: 2rem;
+    transition: all 500ms ease-in-out;
+    font-size: 0.7rem;
+  }
+
+  .middle{
+    /* position: relative; */
+  }
+  .menuList{
+    position: sticky;
+    top:15px;
+  }
+
+
+  .header{
+    position: relative;
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,59,102,0.776829481792717) 35%, rgba(0,212,255,1) 100%); */
+
+    /* box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24); */
+  }
+
+  .one-edge-shadow {
+    box-shadow: 0 8px 6px -6px rgba(0,0,0,.34)
+  }
+
+
+  /* .header::before {
+    content: "Read this -";
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+  } */
+
+  .headerLogo{
+    opacity: 0.1;
+    background-blend-mode: multiply;
+    width:100%;
+    min-width: 300px;
+    height:60px;
+    background-image: url('./assets/images/logo.svg');
+    background-repeat: repeat;
+
+    position: absolute;
+    z-index: -1;
+    /* background-repeat: no-repeat;
+    background-position:top;  dont need it bc size is correct */
+  }
+
+  .portfolioLogo{
+    width:145px;
+    height:41px;
+    background-image: url('./assets/images/portfolio.svg');
+    /* background-repeat:no-repeat;
+    background-position:top; dont need it bc size is correct */
+    margin-left: 2rem;
+  }
+
+
+
+  .navigation{
+    display: flex;
+    justify-content:space-around;
+
+    /* position: relative; */
+  }
+
+
+  .underLine{
+    /* animation: slidein 2s; */
+    /* width: calc(100% - 100px); */
+    /* width:100px;
+    height:1rem;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: -1; */
+    /* animation-fill-mode: forwards; */
+  }
+
+  /* @keyframes slidein {
+    0% {
+      transform: translateX(0%);
+      background: var(--bgOrange);
+    }
+    50% {
+      background: var(--bgYellow);
+    }
+    100% {
+      transform: translateX(100%);
+      background: var(--bgOrange);
+    }
+  } */
+/*
+  ghostwhite	#F8F8FF	rgb(248,248,255)
+ 	whitesmoke	#F5F5F5	 */
+
+  .navigation-list{
+    color:var(--bgBlack);
+
+    width:100px;
+    text-align: center;
+    /* font-weight:bolder; */
+    font-size: 1rem;
+    /* margin-right:2rem; */
+    /* padding:1px; */
+    /* font-weight:bold; */
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Unna', serif;
+    font-family: 'Gentium Basic', serif;
+    font-family: 'IBM Plex Sans';
+
+  }
+  .navigation-list:hover {
+    /* background-color: var(--bgOrange); */
+    /* color:var(--bgWhite); */
+    transition: all 500ms ease-in-out;
+  }
+  .bubble{
+    position: absolute;
+    z-index: -2;
+    background: var(--bgBlack);
+    transition: all 500ms ease-in-out;
+    transform: scale(1.5);
+  }
+
+  .main{
+    /* background-color: var(--bgBlue); */
+    /* border-bottom: 1px solid var(--bgGrey); */
+
+    /* opacity:0.5; */
+    min-height:calc(100vh - 130px);
+    height:auto;
+    /* margin-top:1rem; */
+    /* min-width: 1000px; */
+    background-color: rgba(238, 238, 238, 0.81) !important;
+  }
+  .side{
+    /* background-color: var(--bgOrange); */
+    /* border-left: 1px solid rgba(238, 150, 75, 0.3); */
+    /* margin-left: -1px; */
+    /* margin-top:1px; */
+    /* background-color: rgba(113,113,113,0.776829481792717) */
+    /* background: url('./assets/images/side.svg'); */
+    padding-top:1.6rem;
+
+  }
+
+
+  .footer{
+    background-color: var(--bgBlack);
+  }
+
+  /* vids */
+  .cinema{
+    display: flex;
+    perspective: 500px;
+    justify-content:space-between;
+
+    height:auto;
+  }
+
+  .bar{
+    width:100%;
+    height:125px;
+    background-image: url('./assets/images/doublebar.svg');
+    background-color: rgba(238, 238, 238, 0.81) !important;
+    background-blend-mode: color;
+
+  }
+
+  .sideBlock{
+
+    width:200px;
+    /* height:400px; */
+
+    /* need to change let length as well */
+    /* height:auto; */
+    /* background-color:darkslategrey; */
+    transition: all 500ms ease-in-out;
+    /* opacity: 0.7; */
+
+    /* border-bottom: 2px solid var(--bgOrange); */
+    /* border-top: 2px solid var(--bgOrange); */
+
+    background-color: rgba(238, 238, 238, 0.81) !important;
+    background-blend-mode: color;
+  }
+  .sideBlockLeft{
+    transform-origin:left;
+
+    /* background:linear-gradient(0.25turn, #ebf8e1,#000000 ); */
+    /* background:linear-gradient(90deg,  rgba(113,113,113,0.776829481792717)0%,rgba(255,255,255,1) 100%); */
+    background-image: url('./assets/images/side.svg');
+  }
+
+  .sideBlockRight{
+    transform-origin:right;
+    /* background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(113,113,113,0.776829481792717) 100%); */
+    background-image: url('./assets/images/dashed.svg');
+
+  }
+
+  .title{
+    text-align: center;
+    padding:10px;
+    color:var(--bgWhite);
+    background-color: #222222;
+  }
+  .description{
+    font-size: 0.8rem;
+    margin: 0 auto;
+    width:70%;
+    padding-top: 0.6rem;
+    /* padding-left: 1rem; */
+    line-height: 1.6;
+
+  }
+
+  .emojiButton{
+    text-align: center;
+  }
+  .eButton{
+    cursor:pointer;
+    border:1px solid #444444;
+    border-radius: 5px;
+    font-size:0.7rem;
+    padding-left:2px;
+  }
+
+  .scene{
+    width:auto;
+    height:100%;
+    transition: all 500ms ease-in-out;
+    background-color: black;
+  }
+
+  video{
+    width: 100%    !important;
+    height: auto   !important;
+  }
+
+
+  /* about component */
+
+  #about_page{
+    display: flex;
+    align-items:flex-start;
+    /* top */
+    justify-content: space-evenly;
+    min-height: 10vh;
+    text-align: left;
+    /* overrides the app - center behavior */
+  }
+
+  .about_sections {
+    width: 50%;
+    padding:2rem;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .about_sections p{
+    margin-top:1rem;
+    margin-bottom: 1rem;
+  }
+
+  .jobDescription {
+      margin-bottom:2rem;
+  }
+
+  .jobDescription ul li{
+    list-style:disc;
+    margin-left:3rem;
+  }
+
+  .divide{
+    display: flex;
+    justify-content: space-between;
+  }
+  .rightSide{
+
+  }
+
+  /* form */
+
+  .full-width-input {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    /* margin-bottom: 10px; */
+  }
+
+  .full-height-input {
+    min-height:50px;
+  }
+  .task-list-form {
+
+  }
+  .commentSection{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+  }
+
+
+  .button {
+    padding: 10px;
+    background: #222;
+    color: #fff;
+    border: 1px solid transparent;
+    borderRadius: 6px;
+    /* this made font larger */
+    /* font: inherit; */
+    width:100%;
+    cursor: pointer
+  }
+
+  .hyperLink:hover{
+    opacity: 0.5;
+  }
+
+
+
+
+  /* end of desktop */
+}
+
+
+
+/* p5 canvas */
+
+.mySketch{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1;
+  pointer-events: none;
+
+  /*
+  1 is upfront - works - with p.clear method
+  0 is behind middle main
+  pointer-events: none; the key
+  https://forum.processing.org/two/discussion/17559/passing-clicks-through-a-p5js-canvas-to-dom-elements-underneath
+   */
+}
+
+.formSize{
+  width: 400px;
 }
