@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import Navigation from './components/Navigation';
 import Main from './components/Main';
-import FindEmoji from './components/FindEmoji';
+// import FindEmoji from './components/FindEmoji';
 import About from './components/About';
 import Menu from './components/Menu';
 
